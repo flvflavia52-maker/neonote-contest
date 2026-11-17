@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina Candidati | neoNote®</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo"><span class="logo-mark">M</span> neoNote®</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="candidati.html" class="active">Candidati</a>
+      <a href="votazioni.html">Votazioni</a>
+      <a href="galleria.html">Eventi Precedenti</a>
+      <a href="regolamento.html">Regolamento & Video</a>
+      <a href="legale.html">Info & Contatti</a>
+    </nav>
+    <div class="nav-auth" id="navAuthArea"></div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="sec-title" style="flex-wrap:wrap; gap:1rem;">
+    <div>
+      <span style="color:var(--lime-neon); font-size:0.82rem; font-weight:700;">ROSTER UFFICIALE</span>
+      <h1>Tutti gli Artisti Candidati</h1>
+    </div>
+    <input type="text" id="filterInput" class="nav-search" style="width:280px;" placeholder="Filtra per nome o genere..." oninput="renderAllCandidates()">
+  </div>
+
+  <div class="grid-3" id="allCandidatesGrid"></div>
+</main>
+
+<script src="data.js"></script>
+<script>
+  const urlQ = new URLSearchParams(window.location.search).get('q');
+  if (urlQ) document.getElementById('filterInput').value = urlQ;
+
+  function renderAllCandidates() {
+    const q = document.getElementById('filterInput').value.toLowerCase();
+    const voted = getVotedList();
+    const list = getCandidates().filter(c =>
+      c.nome.toLowerCase().includes(q) ||
+      c.genere.toLowerCase().includes(q) ||
+      c.brano.toLowerCase().includes(q)
+    );
+
+    document.getElementById('allCandidatesGrid').innerHTML = list.map(c => {
+      const isVoted = voted.includes(c.id);
+      return `
+        <div class="card-panel" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1rem;">
+              <img src="${c.img}" alt="${c.nome}" style="width:72px; height:72px; border-radius:50%; object-fit:cover; border:2px solid var(--purple-neon);">
+              <div>
+                <span style="color:var(--lime-neon); font-size:0.78rem; font-weight:700;">${c.genere}</span>
+                <h3>${c.nome}</h3>
+                <small style="color:var(--text-muted);">Brano: "${c.brano}"</small>
+              </div>
+            </div>
+            <p style="font-size:0.88rem; color:var(--text-light); margin-bottom:1.2rem;">${c.bio}</p>
+          </div>
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:0.6rem;">
+              <span>Voti ricevuti:</span>
+              <strong style="color:var(--lime-neon);">${c.votes}</strong>
+            </div>
+            <button onclick="voteForCandidate(${c.id}, renderAllCandidates)" class="btn ${isVoted ? 'btn-outline' : 'btn-lime'}" style="width:100%;">
+              ${isVoted ? '✓ Voto già registrato' : 'VOTA'}
+            </button>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  document.addEventListener('DOMContentLoaded', renderAllCandidates);
+</script>
+</body>
+</html>

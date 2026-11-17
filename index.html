@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>neoNote® | Home Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo"><span class="logo-mark">M</span> neoNote®</a>
+    <nav class="nav-links"></nav>
+    <input type="text" class="nav-search" placeholder="Cerca artista..." onkeyup="if(event.key==='Enter') location.href='candidati.html?q='+this.value">
+    <div class="nav-auth" id="navAuthArea"></div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <span style="background:rgba(20,20,20,0.85); color:var(--lime-neon); font-size:0.8rem; font-weight:700; padding:0.3rem 0.9rem; border-radius:999px; border:1px solid var(--lime-neon);">
+      ROMA • PIAZZA S. GIOVANNI IN LATERANO
+    </span>
+    <h1 style="margin-top:0.8rem;">"NeoNote Turn Up the Neon,<br>Rock the Boat!"</h1>
+    <p>La musica detta il ritmo, il pubblico decide il vincitore. Ascolta i 10 artisti emergenti in gara, partecipa alle challenge e vivi la finale live a Roma.</p>
+    <div class="hero-cta" style="flex-wrap:wrap;">
+      <a href="votazioni.html" class="btn btn-purple">Vota Candidati</a>
+      <a href="biglietti.html" class="btn btn-lime">Acquista Biglietti</a>
+      <a href="registrazione.html?tab=artista" class="btn btn-outline" style="background:rgba(20,20,20,0.6);">Candida Artista</a>
+    </div>
+    <div class="hero-arch"></div>
+  </section>
+
+  <section class="discover-box">
+    <div class="discover-vinyl-preview">
+      <img src="https://unsplash.com" alt="Anteprima">
+      <div class="vinyl-disc"></div>
+    </div>
+    <div>
+      <h2>SCOPRI I CANDIDATI</h2>
+      <p style="color:var(--text-muted); font-size:0.92rem;">Cerca tra i cantanti e le band in gara o candidati con il tuo brano inedito.</p>
+      <form class="discover-input-wrap" action="candidati.html" method="GET">
+        <input type="text" name="q" placeholder="Cerca per nome artista o genere...">
+        <button type="submit" class="btn btn-lime">+</button>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title">
+      <h2>CANDIDATI IN EVIDENZA</h2>
+      <a href="candidati.html" class="btn btn-outline">Tutti i candidati →</a>
+    </div>
+    <div class="carousel-wrapper">
+      <button class="arrow-btn" onclick="scrollTrack('artistsTrack', -350)">‹</button>
+      <div class="carousel-track" id="artistsTrack"></div>
+      <button class="arrow-btn" onclick="scrollTrack('artistsTrack', 350)">›</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title">
+      <h2>VOTAZIONI CANDIDATI (10 IN GARA)</h2>
+      <a href="votazioni.html" class="btn btn-outline">Classifica completa →</a>
+    </div>
+    <div class="carousel-wrapper">
+      <button class="arrow-btn" onclick="scrollTrack('votesTrack', -340)">‹</button>
+      <div class="carousel-track" id="votesTrack"></div>
+      <button class="arrow-btn" onclick="scrollTrack('votesTrack', 340)">›</button>
+    </div>
+  </section>
+  <section id="cast-ufficiale">
+    <div class="sec-title">
+      <div>
+        <span style="color:var(--lime-neon); font-size:0.8rem; font-weight:700;">LIVE STAGE • PIAZZA S. GIOVANNI IN LATERANO, ROMA</span>
+        <h2>I 4 GIUDICI & I PRESENTATORI</h2>
+      </div>
+      <a href="biglietti.html" class="btn btn-outline">Prenota il tuo posto →</a>
+    </div>
+
+    <h3 style="font-size:1.1rem; color:var(--purple-neon); margin-bottom:1rem;">★ Giuria Tecnica & Artistica</h3>
+    <div class="grid-2" style="margin-bottom:2.2rem;">
+      <div class="card-panel" style="display:flex; align-items:center; gap:1.1rem; padding:1.3rem;">
+        <img src="https://unsplash.com" alt="Giovanni Caputo" style="width:82px; height:82px; border-radius:50%; object-fit:cover; border:2px solid var(--purple-neon); flex-shrink:0;">
+        <div>
+          <span style="background:var(--purple-neon); color:#fff; font-size:0.68rem; font-weight:700; padding:0.15rem 0.55rem; border-radius:999px;">GIUDICE #1 • PRODUTTORE & SOUND DESIGNER</span>
+          <h4 style="font-size:1.1rem; margin:0.35rem 0 0.2rem 0;">Giovanni Caputo</h4>
+          <p style="font-size:0.82rem; color:var(--text-muted);">Produttore discografico e arrangiatore, valuta qualità sonora, originalità e costruzione del brano.</p>
+        </div>
+      </div>
+
+      <div class="card-panel" style="display:flex; align-items:center; gap:1.1rem; padding:1.3rem;">
+        <img src="https://unsplash.com" alt="Renato de luca" style="width:82px; height:82px; border-radius:50%; object-fit:cover; border:2px solid var(--purple-neon); flex-shrink:0;">
+        <div>
+          <span style="background:var(--purple-neon); color:#fff; font-size:0.68rem; font-weight:700; padding:0.15rem 0.55rem; border-radius:999px;">GIUDICE #2 • CANTAUTORE & VOCAL COACH</span>
+          <h4 style="font-size:1.1rem; margin:0.35rem 0 0.2rem 0;">Renato de luca</h4>
+          <p style="font-size:0.82rem; color:var(--text-muted);">Musicista e vocal coach con anni di esperienza live, giudica tecnica vocale ed espressività.</p>
+        </div>
+      </div>
+
+      <div class="card-panel" style="display:flex; align-items:center; gap:1.1rem; padding:1.3rem;">
+        <img src="https://unsplash.com" alt="Walter Rambaldi" style="width:82px; height:82px; border-radius:50%; object-fit:cover; border:2px solid var(--purple-neon); flex-shrink:0;">
+        <div>
+          <span style="background:var(--purple-neon); color:#fff; font-size:0.68rem; font-weight:700; padding:0.15rem 0.55rem; border-radius:999px;">GIUDICE #3 • A&R & TALENT SCOUT</span>
+          <h4 style="font-size:1.1rem; margin:0.35rem 0 0.2rem 0;">Walter Rambaldi</h4>
+          <p style="font-size:0.82rem; color:var(--text-muted);">Direttore artistico e talent scout, analizza impatto radiofonico e potenziale discografico.</p>
+        </div>
+      </div>
+
+      <div class="card-panel" style="display:flex; align-items:center; gap:1.1rem; padding:1.3rem;">
+        <img src="https://unsplash.com" alt="Gabriele Vitalba" style="width:82px; height:82px; border-radius:50%; object-fit:cover; border:2px solid var(--purple-neon); flex-shrink:0;">
+        <div>
+          <span style="background:var(--purple-neon); color:#fff; font-size:0.68rem; font-weight:700; padding:0.15rem 0.55rem; border-radius:999px;">GIUDICE #4 • LIVE DIRECTOR & CRITICO</span>
+          <h4 style="font-size:1.1rem; margin:0.35rem 0 0.2rem 0;">Gabriele Vitalba</h4>
+          <p style="font-size:0.82rem; color:var(--text-muted);">Critico musicale e direttore di palco, valuta presenza scenica e connessione con il pubblico.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.1rem; color:var(--lime-neon); margin-bottom:1rem;">🎙️ Conduzione & Backstage Host</h3>
+    <div class="grid-2">
+      <div class="card-panel" style="display:flex; align-items:center; gap:1.2rem; padding:1.4rem; border-color: rgba(170,255,0,0.4);">
+        <img src="https://unsplash.com" alt="Flavia Fedorca" style="width:86px; height:86px; border-radius:50%; object-fit:cover; border:2px solid var(--lime-neon); flex-shrink:0;">
+        <div>
+          <span style="background:var(--lime-neon); color:var(--bg-dark); font-size:0.68rem; font-weight:700; padding:0.15rem 0.6rem; border-radius:999px;">MAIN STAGE HOST</span>
+          <h4 style="font-size:1.15rem; margin:0.35rem 0 0.2rem 0;">Flavia Fedorca</h4>
+          <p style="font-size:0.84rem; color:var(--text-light);">Conduttrice ufficiale sul palco principale di Piazza S. Giovanni in Laterano, guida le esibizioni e le votazioni.</p>
+        </div>
+      </div>
+
+      <div class="card-panel" style="display:flex; align-items:center; gap:1.2rem; padding:1.4rem; border-color: rgba(170,255,0,0.4);">
+        <img src="https://unsplash.com" alt="Artemisia Dahmani" style="width:86px; height:86px; border-radius:50%; object-fit:cover; border:2px solid var(--lime-neon); flex-shrink:0;">
+        <div>
+          <span style="background:var(--lime-neon); color:var(--bg-dark); font-size:0.68rem; font-weight:700; padding:0.15rem 0.6rem; border-radius:999px;">BACKSTAGE & SOCIAL HOST</span>
+          <h4 style="font-size:1.15rem; margin:0.35rem 0 0.2rem 0;">Artemisia Dahmani</h4>
+          <p style="font-size:0.84rem; color:var(--text-light);">Inviata nel backstage con gli artisti e host delle Fan Challenge su TikTok, Telegram e WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="split-grid">
+    <div>
+      <div class="sec-title">
+        <h2>GALLERIA EVENTI PRECEDENTI</h2>
+        <a href="galleria.html" style="color:var(--lime-neon); font-size:0.85rem;">Vedi archivio</a>
+      </div>
+      <div class="events-row">
+        <a href="galleria.html" class="event-card">
+          <img src="https://unsplash.com" alt="Live Roma">
+          <div class="event-overlay">
+            <small style="color:var(--lime-neon);">ROMA • EDIZIONE 2025</small>
+            <h4>Live Piazza S. Giovanni</h4>
+          </div>
+        </a>
+        <a href="galleria.html" class="event-card">
+          <img src="https://unsplash.com" alt="Summer Stage">
+          <div class="event-overlay">
+            <small style="color:var(--lime-neon);">SUMMER STAGE</small>
+            <h4>Open Air Showcase</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div class="sec-title">
+        <h2>GENERI MUSICALI</h2>
+      </div>
+      <div class="genres-grid">
+        <a href="candidati.html?q=Pop" class="genre-card">
+          <img src="https://unsplash.com" alt="Pop">
+          <span class="genre-label">POP & SYNTH</span>
+          <div class="vinyl-disc"></div>
+        </a>
+        <a href="candidati.html?q=Rock" class="genre-card">
+          <img src="https://unsplash.com" alt="Rock">
+          <span class="genre-label">INDIE & PUNK</span>
+          <div class="vinyl-disc"></div>
+        </a>
+        <a href="candidati.html?q=Urban" class="genre-card">
+          <img src="https://unsplash.com" alt="Urban">
+          <span class="genre-label">URBAN / TRAP</span>
+          <div class="vinyl-disc"></div>
+        </a>
+        <a href="candidati.html?q=Soul" class="genre-card">
+          <img src="https://unsplash.com" alt="Soul">
+          <span class="genre-label">NU-SOUL & FOLK</span>
+          <div class="vinyl-disc"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-cta">
+    <div style="display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap;">
+      <h2>È IL MOMENTO DI VOTARE</h2>
+      <div class="mini-avatars">
+        <img src="https://unsplash.com" alt="">
+        <img src="https://unsplash.com" alt="">
+        <img src="https://unsplash.com" alt="">
+        <img src="https://unsplash.com" alt="">
+      </div>
+    </div>
+    <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
+      <a href="challenge.html" class="btn btn-lime">Gioca alle Challenge</a>
+      <a href="candidati.html" class="btn btn-purple">Esplora gli artisti</a>
+    </div>
+  </section>
+</main>
+
+<footer></footer>
+
+<script src="data.js"></script>
+<script>
+  function scrollTrack(id, amount) {
+    document.getElementById(id).scrollBy({ left: amount, behavior: 'smooth' });
+  }
+
+  function renderHome() {
+    const list = getCandidates();
+    const voted = getVotedList();
+
+    document.getElementById('artistsTrack').innerHTML = list.map(c => `
+      <a href="candidati.html" class="candidate-circle-card">
+        <img src="${c.img}" alt="${c.nome}">
+        <h4>${c.nome}</h4>
+        <p>${c.bio}</p>
+      </a>
+    `).join('');
+
+    document.getElementById('votesTrack').innerHTML = list.map(c => {
+      const isVoted = voted.includes(c.id);
+      const trackUrl = c.link || `https://youtube.com{encodeURIComponent(c.nome + ' ' + c.brano)}`;
+      return `
+        <div class="vote-card">
+          <a href="${trackUrl}" target="_blank" title="Ascolta ${c.nome} — ${c.brano}" class="video-vinyl-stage" style="display:block;">
+            <div class="video-cover">
+              <img src="${c.img}" alt="${c.brano}">
+              <span class="play-badge">▶</span>
+              <span class="spec-chip">${c.spec}</span>
+            </div>
+            <div class="vinyl-disc"></div>
+          </a>
+          <h4><a href="${trackUrl}" target="_blank">${c.nome} — "${c.brano}"</a></h4>
+          <div class="vote-meta">
+            <span>${c.genere}</span>
+            <strong style="color:var(--lime-neon);">${c.votes} voti</strong>
+          </div>
+          <button onclick="voteForCandidate(${c.id}, renderHome)" class="btn ${isVoted ? 'btn-outline' : 'btn-lime'}" style="width:100%;">
+            ${isVoted ? '✓ Votato' : 'VOTA'}
+          </button>
+        </div>
+      `;
+    }).join('');
+  }
+
+  document.addEventListener('DOMContentLoaded', renderHome);
+</script>
+</body>
+</html>

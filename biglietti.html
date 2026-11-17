@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biglietti Live Finale | neoNote®</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo"><span class="logo-mark">M</span> neoNote®</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="candidati.html">Candidati</a>
+      <a href="votazioni.html">Votazioni</a>
+      <a href="biglietti.html" class="active">Biglietti</a>
+      <a href="galleria.html">Eventi Precedenti</a>
+      <a href="regolamento.html">Regolamento & Video</a>
+      <a href="legale.html">Info & Contatti</a>
+    </nav>
+    <div class="nav-auth" id="navAuthArea"></div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="discover-box" style="margin-bottom:2.5rem;">
+    <div class="discover-vinyl-preview">
+      <img src="https://unsplash.com" alt="Finale Live">
+      <div class="vinyl-disc"></div>
+    </div>
+    <div>
+      <span style="background:var(--lime-neon); color:var(--bg-dark); font-size:0.75rem; font-weight:700; padding:0.2rem 0.6rem; border-radius:999px;">POSTI LIMITATI • FINALE LIVE 2026</span>
+      <h1 style="font-size:2.4rem; margin-top:0.5rem;">ACQUISTA I BIGLIETTI PER LA FINALE</h1>
+      <p style="color:var(--text-light); font-size:0.95rem;">
+        <strong>Data:</strong> Sabato 31 Agosto / 01 Settembre 2027 — Ore 20:30<br>
+        <strong>Location:</strong> Roma — Piazza S. Giovanni in Laterano
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-title">
+      <h2>Scegli il tuo Pass</h2>
+      <span style="color:var(--text-muted); font-size:0.85rem;">Biglietto nominativo con QR Code inviato subito</span>
+    </div>
+
+    <div class="grid-3">
+      <div class="card-panel" style="display:flex; flex-direction:column; justify-content:space-between;">
+        <div>
+          <span style="color:var(--lime-neon); font-size:0.8rem; font-weight:700;">INGRESSO GENERALE</span>
+          <h3 style="font-size:1.6rem; margin:0.3rem 0;">Standard Pass</h3>
+          <div style="font-size:2.2rem; font-family:'Anton',sans-serif; color:var(--text-white); margin:0.6rem 0;">
+            € 25,00 <span style="font-size:0.85rem; font-family:'Encode Sans',sans-serif; color:var(--text-muted);">/ persona</span>
+          </div>
+          <ul style="list-style:none; font-size:0.88rem; color:var(--text-light); margin:1rem 0;">
+            <li style="margin-bottom:0.4rem;">✓ Accesso area parterre concerto</li>
+            <li style="margin-bottom:0.4rem;">✓ 1 Drink incluso all'ingresso</li>
+            <li style="margin-bottom:0.4rem;">✓ Voto live extra durante la finale</li>
+          </ul>
+        </div>
+        <button onclick="selectTicket('Standard Pass', 25)" class="btn btn-outline" style="width:100%;">Seleziona Standard</button>
+      </div>
+
+      <div class="card-panel" style="border:2px solid var(--lime-neon); display:flex; flex-direction:column; justify-content:space-between; position:relative;">
+        <span style="position:absolute; top:-12px; right:18px; background:var(--lime-neon); color:var(--bg-dark); font-size:0.72rem; font-weight:700; padding:0.2rem 0.7rem; border-radius:999px;">PIÙ SCELTO</span>
+        <div>
+          <span style="color:var(--purple-neon); font-size:0.8rem; font-weight:700;">ESPERIENZA ESCLUSIVA</span>
+          <h3 style="font-size:1.6rem; margin:0.3rem 0;">VIP & Backstage</h3>
+          <div style="font-size:2.2rem; font-family:'Anton',sans-serif; color:var(--lime-neon); margin:0.6rem 0;">
+            € 55,00 <span style="font-size:0.85rem; font-family:'Encode Sans',sans-serif; color:var(--text-muted);">/ persona</span>
+          </div>
+          <ul style="list-style:none; font-size:0.88rem; color:var(--text-light); margin:1rem 0;">
+            <li style="margin-bottom:0.4rem;">✓ Ingresso prioritario salta-fila</li>
+            <li style="margin-bottom:0.4rem;">✓ Area rialzata fronte palco + 2 Drink</li>
+            <li style="margin-bottom:0.4rem;">✓ Meet & Greet con i 10 finalisti</li>
+            <li style="margin-bottom:0.4rem;">✓ Vinile celebrativo neoNote® in omaggio</li>
+          </ul>
+        </div>
+        <button onclick="selectTicket('VIP & Backstage', 55)" class="btn btn-lime" style="width:100%;">Seleziona VIP</button>
+      </div>
+
+      <div class="card-panel" style="display:flex; flex-direction:column; justify-content:space-between;">
+        <div>
+          <span style="color:var(--lime-neon); font-size:0.8rem; font-weight:700;">GRUPPI & OSPITI</span>
+          <h3 style="font-size:1.6rem; margin:0.3rem 0;">Tavolo Privè (4 Pers.)</h3>
+          <div style="font-size:2.2rem; font-family:'Anton',sans-serif; color:var(--text-white); margin:0.6rem 0;">
+            € 180,00 <span style="font-size:0.85rem; font-family:'Encode Sans',sans-serif; color:var(--text-muted);">/ tavolo</span>
+          </div>
+          <ul style="list-style:none; font-size:0.88rem; color:var(--text-light); margin:1rem 0;">
+            <li style="margin-bottom:0.4rem;">✓ 4 Pass VIP inclusi</li>
+            <li style="margin-bottom:0.4rem;">✓ Tavolo riservato in balconata</li>
+            <li style="margin-bottom:0.4rem;">✓ 1 Bottiglia premium + servizio al tavolo</li>
+          </ul>
+        </div>
+        <button onclick="selectTicket('Tavolo Privè (4 Pers.)', 180)" class="btn btn-purple" style="width:100%;">Seleziona Privè</button>
+      </div>
+    </div>
+  </section>
+  <section id="checkoutSection" class="grid-2" style="align-items:start;">
+    <div class="card-panel">
+      <h2>Completa l'Acquisto</h2>
+      <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:1.2rem;">Inserisci i dati dell'intestatario per generare i biglietti digitali.</p>
+      <form onsubmit="completeOrder(event)">
+        <div class="form-group">
+          <label>Tipologia Pass Selezionata</label>
+          <select id="ticketType" onchange="updateTotal()">
+            <option value="25" data-name="Standard Pass">Standard Pass — € 25,00</option>
+            <option value="55" data-name="VIP & Backstage" selected>VIP & Backstage — € 55,00</option>
+            <option value="180" data-name="Tavolo Privè (4 Pers.)">Tavolo Privè (4 Pers.) — € 180,00</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Quantità Biglietti</label>
+          <input type="number" id="ticketQty" value="1" min="1" max="10" oninput="updateTotal()" required>
+        </div>
+        <div class="form-group">
+          <label>Nome e Cognome Intestatario</label>
+          <input type="text" id="buyerName" required placeholder="Es. Marco Rossi">
+        </div>
+        <div class="form-group">
+          <label>Email per invio biglietti PDF / QR</label>
+          <input type="email" id="buyerEmail" required placeholder="marco@esempio.it">
+        </div>
+        <div class="form-group">
+          <label>Metodo di Pagamento</label>
+          <select>
+            <option>Carta di Credito / Debito (Visa, Mastercard, Amex)</option>
+            <option>PayPal / Apple Pay / Google Pay</option>
+            <option>Satispay</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-lime" style="width:100%; font-size:0.95rem;">Conferma e Paga Ora</button>
+      </form>
+    </div>
+
+    <div>
+      <div class="card-panel" style="margin-bottom:1.5rem;">
+        <h3 style="margin-bottom:1rem;">Riepilogo Ordine</h3>
+        <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.9rem;">
+          <span id="summaryLabel">VIP & Backstage x1</span>
+          <span id="summarySub">€ 55,00</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:0.8rem; font-size:0.85rem; color:var(--text-muted);">
+          <span>Diritti di prevendita (inclusi)</span>
+          <span>€ 0,00</span>
+        </div>
+        <div style="border-top:1px solid var(--border-color); padding-top:0.8rem; display:flex; justify-content:space-between; align-items:center;">
+          <strong>Totale da pagare</strong>
+          <span id="summaryTotal" style="font-size:1.6rem; font-family:'Anton',sans-serif; color:var(--lime-neon);">€ 55,00</span>
+        </div>
+      </div>
+
+      <div id="generatedTicketBox" style="display:none; background:var(--gradient-hero); border-radius:20px; padding:1.6rem; border:2px dashed var(--lime-neon);">
+        <span style="background:var(--bg-dark); color:var(--lime-neon); font-size:0.72rem; font-weight:700; padding:0.2rem 0.6rem; border-radius:999px;">✓ BIGLIETTO CONFERMATO</span>
+        <h3 style="font-size:1.6rem; margin-top:0.6rem;">neoNote® LIVE PASS 2026</h3>
+        <p id="ticketDetails" style="font-size:0.9rem; margin:0.6rem 0; color:var(--text-light);"></p>
+        <div style="background:var(--bg-dark); padding:0.8rem; border-radius:12px; display:flex; justify-content:space-between; align-items:center; margin-top:1rem;">
+          <div>
+            <small style="color:var(--text-muted); display:block;">CODICE UNIVOCO INGRESSO</small>
+            <strong id="ticketCode" style="color:var(--lime-neon); letter-spacing:1.5px;"></strong>
+          </div>
+          <span style="font-size:1.6rem;">🎟️</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="data.js"></script>
+<script>
+  function selectTicket(name, price) {
+    const select = document.getElementById('ticketType');
+    for (let i = 0; i < select.options.length; i++) {
+      if (Number(select.options[i].value) === price) {
+        select.selectedIndex = i;
+        break;
+      }
+    }
+    updateTotal();
+    document.getElementById('checkoutSection').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function updateTotal() {
+    const select = document.getElementById('ticketType');
+    const price = Number(select.value);
+    const name = select.options[select.selectedIndex].getAttribute('data-name');
+    const qty = Math.max(1, Number(document.getElementById('ticketQty').value) || 1);
+    const total = price * qty;
+
+    document.getElementById('summaryLabel').textContent = `${name} x${qty}`;
+    document.getElementById('summarySub').textContent = `€ ${total.toFixed(2).replace('.', ',')}`;
+    document.getElementById('summaryTotal').textContent = `€ ${total.toFixed(2).replace('.', ',')}`;
+  }
+
+  function completeOrder(e) {
+    e.preventDefault();
+    const select = document.getElementById('ticketType');
+    const name = select.options[select.selectedIndex].getAttribute('data-name');
+    const qty = document.getElementById('ticketQty').value;
+    const buyer = document.getElementById('buyerName').value;
+    const email = document.getElementById('buyerEmail').value;
+    const code = 'NN-' + Math.floor(100000 + Math.random() * 900000);
+
+    document.getElementById('ticketDetails').innerHTML =
+      `Intestatario: <strong>${buyer}</strong><br>Pass: <strong>${name} (x${qty})</strong><br>Inviato a: ${email}`;
+    document.getElementById('ticketCode').textContent = code;
+    document.getElementById('generatedTicketBox').style.display = 'block';
+  }
+</script>
+</body>
+</html>

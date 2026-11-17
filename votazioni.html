@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Votazioni Candidati | neoNote®</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo"><span class="logo-mark">M</span> neoNote®</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="candidati.html">Candidati</a>
+      <a href="votazioni.html" class="active">Votazioni</a>
+      <a href="biglietti.html">Biglietti</a>
+      <a href="challenge.html">Challenge</a>
+      <a href="galleria.html">Eventi Precedenti</a>
+      <a href="regolamento.html">Regolamento & Video</a>
+      <a href="legale.html">Info & Contatti</a>
+    </nav>
+    <div class="nav-auth" id="navAuthArea"></div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="sec-title" style="flex-wrap:wrap; gap:1rem;">
+    <div>
+      <span style="color:var(--lime-neon); font-size:0.82rem; font-weight:700;">SISTEMA DI VOTAZIONE IN TEMPO REALE</span>
+      <h1>Layout Votazioni dei Candidati</h1>
+    </div>
+    <a href="registrazione.html?tab=artista" class="btn btn-purple">+ Candida la tua esibizione</a>
+  </div>
+
+  <div class="grid-3" id="votingGrid"></div>
+</main>
+
+<script src="data.js"></script>
+<script>
+  function renderVotingPage() {
+    const list = getCandidates().sort((a, b) => b.votes - a.votes);
+    const total = list.reduce((s, c) => s + c.votes, 0);
+    const voted = getVotedList();
+
+    document.getElementById('votingGrid').innerHTML = list.map((c, index) => {
+      const pct = total ? Math.round((c.votes / total) * 100) : 0;
+      const isVoted = voted.includes(c.id);
+      const trackUrl = c.link || `https://youtube.com{encodeURIComponent(c.nome + ' ' + c.brano)}`;
+
+      return `
+        <div class="vote-card" style="max-width:100%; min-width:auto; margin-right:0;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:0.6rem; font-size:0.8rem;">
+            <span style="background:var(--purple-neon); padding:0.15rem 0.55rem; border-radius:999px; font-weight:700;">#${index + 1} IN CLASSIFICA</span>
+            <span style="color:var(--lime-neon); font-weight:700;">${pct}%</span>
+          </div>
+          <a href="${trackUrl}" target="_blank" title="Ascolta ${c.nome} — ${c.brano}" class="video-vinyl-stage" style="display:block;">
+            <div class="video-cover">
+              <img src="${c.img}" alt="${c.brano}">
+              <span class="play-badge">▶</span>
+              <span class="spec-chip">${c.spec}</span>
+            </div>
+            <div class="vinyl-disc"></div>
+          </a>
+          <h4>
+            <a href="${trackUrl}" target="_blank" style="text-decoration:underline; text-decoration-color:var(--purple-neon);">
+              ${c.nome} — "${c.brano}"
+            </a>
+          </h4>
+          <p style="font-size:0.78rem; color:var(--text-muted); margin-top:0.25rem;">${c.bio}</p>
+          <div style="background:var(--bg-dark); height:7px; border-radius:999px; overflow:hidden; margin:0.7rem 0;">
+            <div style="width:${pct}%; height:100%; background:linear-gradient(90deg, var(--purple-neon), var(--lime-neon));"></div>
+          </div>
+          <div class="vote-meta">
+            <span>${c.genere} • <a href="${trackUrl}" target="_blank" style="color:var(--purple-neon); font-weight:600;">Ascolta ↗</a></span>
+            <strong style="color:var(--lime-neon);">${c.votes} voti</strong>
+          </div>
+          <button onclick="voteForCandidate(${c.id}, renderVotingPage)" class="btn ${isVoted ? 'btn-outline' : 'btn-lime'}" style="width:100%;">
+            ${isVoted ? '✓ Votato' : 'VOTA'}
+          </button>
+        </div>
+      `;
+    }).join('');
+  }
+
+  document.addEventListener('DOMContentLoaded', renderVotingPage);
+</script>
+</body>
+</html>
