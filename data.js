@@ -1,27 +1,27 @@
 const DEFAULT_CANDIDATES = [
-  { id: 1, nome: "Nico Arezzo", brano: "Volo", genere: "Cantautorato Pop", bio: "Cantautore siciliano con uno stile intimo, chitarra acustica e testi diretti.", votes: 142, img: "https://unsplash.com", spec: "1080p • 184MB", link: "https://youtube.com" },
-  { id: 2, nome: "Sarah Toscano", brano: "Tacchi (fra le dita)", genere: "Dance Pop", bio: "Giovane voce pop italiana dal sound moderno, ritmato e perfetto per il palco.", votes: 158, img: "https://unsplash.com", spec: "4K • 390MB", link: "https://youtube.com" },
-  { id: 3, nome: "Sethu", brano: "Cause perse", genere: "Alt Urban", bio: "Artista ligure che mescola sonorità urban, chitarre distorte ed energia punk.", votes: 131, img: "https://unsplash.com", spec: "1080p • 120MB", link: "https://youtube.com" },
-  { id: 4, nome: "ISIDE", brano: "Paradiso", genere: "Elettropop", bio: "Progetto bergamasco caratterizzato da sintetizzatori sognanti e beat elettronici.", votes: 119, img: "https://unsplash.com", spec: "1080p • 215MB", link: "https://youtube.com" },
-  { id: 5, nome: "Tony Boy", brano: "Leanin'", genere: "Melodic Urban", bio: "Rapper padovano tra i nomi più seguiti della nuova onda urban introspettiva.", votes: 165, img: "https://unsplash.com", spec: "1080p • 260MB", link: "https://youtube.com" },
-  { id: 6, nome: "Birthh", brano: "Supermarket", genere: "Alt Pop", bio: "Cantautrice e producer toscana dal respiro internazionale con beat ricercati.", votes: 111, img: "https://unsplash.com", spec: "1080p • 150MB", link: "https://youtube.com" },
-  { id: 7, nome: "bnkr44", brano: "Governo Punk", genere: "Alt Pop / Punk", bio: "Collettivo toscano esplosivo che unisce pop punk, elettronica e club culture.", votes: 150, img: "https://unsplash.com", spec: "4K • 440MB", link: "https://youtube.com" },
-  { id: 8, nome: "GINEVRA", brano: "Club Metro", genere: "Nu-Soul / Electro", bio: "Cantautrice e producer torinese dalle atmosfere notturne, R&B ed elettroniche.", votes: 128, img: "https://unsplash.com", spec: "1080p • 175MB", link: "https://youtube.com" },
-  { id: 9, nome: "Chiara Cami", brano: "Fiori di plastica", genere: "Indie Pop", bio: "Giovane cantautrice selezionata tra le nuove promesse della scena indie.", votes: 98, img: "https://unsplash.com", spec: "1080p • 290MB", link: "https://youtube.com" },
-  { id: 10, nome: "Delia", brano: "Sicilia Bedda", genere: "Folk / World Pop", bio: "Artista siciliana che fonde tradizione vocale mediterranea e suoni moderni.", votes: 137, img: "https://unsplash.com", spec: "1080p • 140MB", link: "https://youtube.com" }
+  { id: 1, nome: "Nico Arezzo", brano: "Volo", genere: "Cantautorato Pop", bio: "Cantautore siciliano con uno stile intimo, chitarra acustica e testi diretti.", votes: 142, img: "foto/NicoArezzo.jpg", spec: "1080p • 184MB", link: "https://youtube.com" },
+  { id: 2, nome: "Sarah Toscano", brano: "Tacchi (fra le dita)", genere: "Dance Pop", bio: "Giovane voce pop italiana dal sound moderno, ritmato e perfetto per il palco.", votes: 158, img: "foto/SarahToscano.jpg", spec: "4K • 390MB", link: "https://youtube.com" },
+  { id: 3, nome: "Sethu", brano: "Cause perse", genere: "Alt Urban", bio: "Artista ligure che mescola sonorità urban, chitarre distorte ed energia punk.", votes: 131, img: "foto/Sethu.jpg", spec: "1080p • 120MB", link: "https://youtube.com" },
+  { id: 4, nome: "ISIDE", brano: "Paradiso", genere: "Elettropop", bio: "Progetto bergamasco caratterizzato da sintetizzatori sognanti e beat elettronici.", votes: 119, img: "foto/Iside.jpg", spec: "1080p • 215MB", link: "https://youtube.com" },
+  { id: 5, nome: "Tony Boy", brano: "Leanin'", genere: "Melodic Urban", bio: "Rapper padovano tra i nomi più seguiti della nuova onda urban introspettiva.", votes: 165, img: "foto/TonyBoy.jpg", spec: "1080p • 260MB", link: "https://youtube.com" },
+  { id: 6, nome: "Birthh", brano: "Supermarket", genere: "Alt Pop", bio: "Cantautrice e producer toscana dal respiro internazionale con beat ricercati.", votes: 111, img: "foto/Birthh.jpg", spec: "1080p • 150MB", link: "https://youtube.com" },
+  { id: 7, nome: "bnkr44", brano: "Governo Punk", genere: "Alt Pop / Punk", bio: "Collettivo toscano esplosivo che unisce pop punk, elettronica e club culture.", votes: 150, img: "foto/bnkr44.jpg", spec: "4K • 440MB", link: "https://youtube.com" },
+  { id: 8, nome: "GINEVRA", brano: "Club Metro", genere: "Nu-Soul / Electro", bio: "Cantautrice e producer torinese dalle atmosfere notturne, R&B ed elettroniche.", votes: 128, img: "foto/Ginevra.jpg", spec: "1080p • 175MB", link: "https://youtube.com" },
+  { id: 9, nome: "Chiara Cami", brano: "Alibi", genere: "Indie Pop", bio: "Giovane cantautrice selezionata tra le nuove promesse della scena indie.", votes: 98, img: "foto/ChiaraCami.jpg", spec: "1080p • 290MB", link: "https://youtube.com" },
+  { id: 10, nome: "Delia", brano: "Sicilia Bedda", genere: "Folk / World Pop", bio: "Artista siciliana che fonde tradizione vocale mediterranea e suoni moderni.", votes: 137, img: "foto/Delia.jpg", spec: "1080p • 140MB", link: "https://youtube.com" }
 ];
 
 function getCandidates() {
-  const stored = localStorage.getItem('neonote_candidates_v3');
+  const stored = localStorage.getItem('neonote_candidates_v5');
   if (!stored) {
-    localStorage.setItem('neonote_candidates_v3', JSON.stringify(DEFAULT_CANDIDATES));
+    localStorage.setItem('neonote_candidates_v5', JSON.stringify(DEFAULT_CANDIDATES));
     return DEFAULT_CANDIDATES;
   }
   return JSON.parse(stored);
 }
 
 function getVotedList() {
-  return JSON.parse(localStorage.getItem('neonote_voted_v3')) || [];
+  return JSON.parse(localStorage.getItem('neonote_voted_v5')) || [];
 }
 
 function getCurrentUser() {
@@ -64,8 +64,8 @@ function voteForCandidate(id, callback) {
   }
   const list = getCandidates().map(c => c.id === id ? { ...c, votes: c.votes + 1 } : c);
   voted.push(id);
-  localStorage.setItem('neonote_candidates_v3', JSON.stringify(list));
-  localStorage.setItem('neonote_voted_v3', JSON.stringify(voted));
+  localStorage.setItem('neonote_candidates_v5', JSON.stringify(list));
+  localStorage.setItem('neonote_voted_v5', JSON.stringify(voted));
   if (callback) callback();
 }
 
@@ -129,10 +129,10 @@ function injectGlobalLayout() {
       <div class="footer-col">
         <h4>Community Ufficiale</h4>
         <ul>
-          <li><a href="https://t.me/+NQBwgEVVpE84NDlk" target="_blank">Canale Telegram ↗</a></li>
-          <li><a href="https://whatsapp.com/channel/0029VbDxUZD2v1Irr0lQc72j" target="_blank">Canale WhatsApp ↗</a></li>
-          <li><a href="https://www.facebook.com/groups/3578936242268492/" target="_blank">Gruppo Facebook ↗</a></li>
-          <li><a href="https://www.tiktok.com/@neonote4?_r=1&_t=ZN-9BU9Bjp5RX4" target="_blank">TikTok @neonote4 ↗</a></li>
+          <li><a href="https://t.me" target="_blank">Canale Telegram ↗</a></li>
+          <li><a href="https://whatsapp.com" target="_blank">Canale WhatsApp ↗</a></li>
+          <li><a href="https://facebook.com" target="_blank">Gruppo Facebook ↗</a></li>
+          <li><a href="https://tiktok.com" target="_blank">TikTok @neonote4 ↗</a></li>
         </ul>
       </div>
     </div>

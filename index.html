@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>neoNote® | Home Page</title>
+  <meta property="og:image" content="https://github.io">
+  <meta name="twitter:image" content="https://github.io">
+
+  <title>neoNote | Home Page</title>
+
+  <!-- BANNER ANTEPRIMA SOCIAL (OPEN GRAPH & TWITTER CARD) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="neoNote Music Contest">
+  <meta property="og:title" content="neoNote | Turn Up the Neon, Rock the Boat!">
+  <meta property="og:description" content="Vota i 10 artisti emergenti in gara, partecipa alle Fan Challenge JBL e Ray-Ban Meta e prenota i biglietti per la finale live a Roma, Piazza S. Giovanni in Laterano.">
+  <meta property="og:url" content="https://github.io">
+  <meta property="og:image" content="https://unsplash.com">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="neoNote | Turn Up the Neon, Rock the Boat!">
+  <meta name="twitter:description" content="Vota i 10 artisti in gara e vinci premi JBL e Ray-Ban Meta. Finale live a Roma, Piazza S. Giovanni in Laterano!">
+  <meta name="twitter:image" content="https://unsplash.com">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
   <div class="nav-wrap">
-    <a href="index.html" class="logo"><span class="logo-mark">M</span> neoNote®</a>
+    <a href="index.html" class="logo"><span class="logo-mark">M</span> neoNote</a>
     <nav class="nav-links"></nav>
     <input type="text" class="nav-search" placeholder="Cerca artista..." onkeyup="if(event.key==='Enter') location.href='candidati.html?q='+this.value">
     <div class="nav-auth" id="navAuthArea"></div>
@@ -69,76 +86,74 @@
       <div class="carousel-track" id="votesTrack"></div>
       <button class="arrow-btn" onclick="scrollTrack('votesTrack', 340)">›</button>
     </div>
-  </section>
-  <section id="cast-ufficiale">
-    <div class="sec-title">
+
+   <!-- GIURIA UFFICIALE (4 GIUDICI CON L'ULTIMO CENTRATO) & PRESENTATORI (2 CONDUTTORI) -->
+  <section id="cast-ufficiale" style="margin: 4.5rem 0;">
+    <div class="sec-title" style="margin-bottom: 2rem;">
       <div>
-        <span style="color:var(--lime-neon); font-size:0.8rem; font-weight:700;">LIVE STAGE • PIAZZA S. GIOVANNI IN LATERANO, ROMA</span>
-        <h2>I 4 GIUDICI & I PRESENTATORI</h2>
+        <span style="background:var(--lime-neon); color:var(--bg-dark); font-size:0.85rem; font-weight:700; padding:0.3rem 0.9rem; border-radius:999px;">LIVE STAGE • PIAZZA S. GIOVANNI IN LATERANO, ROMA</span>
+        <h2 style="font-size: clamp(2.2rem, 4vw, 3rem); margin-top: 0.7rem;">I 4 GIUDICI & I PRESENTATORI</h2>
       </div>
-      <a href="biglietti.html" class="btn btn-outline">Prenota il tuo posto →</a>
+      <a href="biglietti.html" class="btn btn-lime" style="font-size: 0.95rem; padding: 0.75rem 1.5rem;">Prenota il tuo posto →</a>
     </div>
 
-    <h3 style="font-size:1.1rem; color:var(--purple-neon); margin-bottom:1rem;">★ Giuria Tecnica & Artistica</h3>
-    <div class="grid-2" style="margin-bottom:2.2rem;">
-      <div class="card-panel" style="display:flex; align-items:center; gap:1.1rem; padding:1.3rem;">
-        <img src="https://unsplash.com" alt="Giovanni Caputo" style="width:82px; height:82px; border-radius:50%; object-fit:cover; border:2px solid var(--purple-neon); flex-shrink:0;">
-        <div>
-          <span style="background:var(--purple-neon); color:#fff; font-size:0.68rem; font-weight:700; padding:0.15rem 0.55rem; border-radius:999px;">GIUDICE #1 • PRODUTTORE & SOUND DESIGNER</span>
-          <h4 style="font-size:1.1rem; margin:0.35rem 0 0.2rem 0;">Giovanni Caputo</h4>
-          <p style="font-size:0.82rem; color:var(--text-muted);">Produttore discografico e arrangiatore, valuta qualità sonora, originalità e costruzione del brano.</p>
-        </div>
+    <!-- PRESENTATORI IN PRIMO PIANO (2 CARD GRANDI) -->
+    <h3 style="font-size:1.35rem; color:var(--lime-neon); margin-bottom:1.2rem;">🎙️ Conduzione Ufficiale & Backstage Host</h3>
+    <div class="grid-2" style="gap: 2rem; margin-bottom: 3.5rem;">
+      <!-- PRESENTATRICE 1: FLAVIA FEDORCA -->
+      <div class="card-panel" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding: 2.2rem 1.8rem; border: 2px solid var(--lime-neon); background: linear-gradient(160deg, rgba(170,255,0,0.12) 0%, var(--surface-card) 60%);">
+        <img src="foto/Flavia.jpg" alt="Flavia Fedorca" style="width:155px; height:155px; border-radius:50%; object-fit:cover; border:4px solid var(--lime-neon); box-shadow: 0 0 25px rgba(170,255,0,0.35); margin-bottom: 1.2rem;">
+        <span style="background:var(--lime-neon); color:var(--bg-dark); font-size:0.78rem; font-weight:700; padding:0.25rem 0.85rem; border-radius:999px;">MAIN STAGE HOST</span>
+        <h4 style="font-size:1.55rem; margin:0.6rem 0 0.4rem 0;">Flavia Fedorca</h4>
+        <p style="font-size:0.95rem; color:var(--text-light); max-width: 400px;">Conduttrice ufficiale sul palco principale di Piazza S. Giovanni in Laterano a Roma, guida le esibizioni live e le votazioni del pubblico.</p>
       </div>
 
-      <div class="card-panel" style="display:flex; align-items:center; gap:1.1rem; padding:1.3rem;">
-        <img src="https://unsplash.com" alt="Renato de luca" style="width:82px; height:82px; border-radius:50%; object-fit:cover; border:2px solid var(--purple-neon); flex-shrink:0;">
-        <div>
-          <span style="background:var(--purple-neon); color:#fff; font-size:0.68rem; font-weight:700; padding:0.15rem 0.55rem; border-radius:999px;">GIUDICE #2 • CANTAUTORE & VOCAL COACH</span>
-          <h4 style="font-size:1.1rem; margin:0.35rem 0 0.2rem 0;">Renato de luca</h4>
-          <p style="font-size:0.82rem; color:var(--text-muted);">Musicista e vocal coach con anni di esperienza live, giudica tecnica vocale ed espressività.</p>
-        </div>
-      </div>
-
-      <div class="card-panel" style="display:flex; align-items:center; gap:1.1rem; padding:1.3rem;">
-        <img src="https://unsplash.com" alt="Walter Rambaldi" style="width:82px; height:82px; border-radius:50%; object-fit:cover; border:2px solid var(--purple-neon); flex-shrink:0;">
-        <div>
-          <span style="background:var(--purple-neon); color:#fff; font-size:0.68rem; font-weight:700; padding:0.15rem 0.55rem; border-radius:999px;">GIUDICE #3 • A&R & TALENT SCOUT</span>
-          <h4 style="font-size:1.1rem; margin:0.35rem 0 0.2rem 0;">Walter Rambaldi</h4>
-          <p style="font-size:0.82rem; color:var(--text-muted);">Direttore artistico e talent scout, analizza impatto radiofonico e potenziale discografico.</p>
-        </div>
-      </div>
-
-      <div class="card-panel" style="display:flex; align-items:center; gap:1.1rem; padding:1.3rem;">
-        <img src="https://unsplash.com" alt="Gabriele Vitalba" style="width:82px; height:82px; border-radius:50%; object-fit:cover; border:2px solid var(--purple-neon); flex-shrink:0;">
-        <div>
-          <span style="background:var(--purple-neon); color:#fff; font-size:0.68rem; font-weight:700; padding:0.15rem 0.55rem; border-radius:999px;">GIUDICE #4 • LIVE DIRECTOR & CRITICO</span>
-          <h4 style="font-size:1.1rem; margin:0.35rem 0 0.2rem 0;">Gabriele Vitalba</h4>
-          <p style="font-size:0.82rem; color:var(--text-muted);">Critico musicale e direttore di palco, valuta presenza scenica e connessione con il pubblico.</p>
-        </div>
+      <!-- PRESENTATRICE 2: ARTEMISIA DAHMANI -->
+      <div class="card-panel" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding: 2.2rem 1.8rem; border: 2px solid var(--lime-neon); background: linear-gradient(160deg, rgba(170,255,0,0.12) 0%, var(--surface-card) 60%);">
+        <img src="foto/Artemisia.jpeg" alt="Artemisia Dahmani" style="width:155px; height:155px; border-radius:50%; object-fit:cover; border:4px solid var(--lime-neon); box-shadow: 0 0 25px rgba(170,255,0,0.35); margin-bottom: 1.2rem;">
+        <span style="background:var(--lime-neon); color:var(--bg-dark); font-size:0.78rem; font-weight:700; padding:0.25rem 0.85rem; border-radius:999px;">BACKSTAGE & SOCIAL HOST</span>
+        <h4 style="font-size:1.55rem; margin:0.6rem 0 0.4rem 0;">Artemisia Dahmani</h4>
+        <p style="font-size:0.95rem; color:var(--text-light); max-width: 400px;">Inviata nel backstage con gli artisti finalisti e host ufficiale delle Fan Challenge su TikTok, Telegram e WhatsApp.</p>
       </div>
     </div>
 
-    <h3 style="font-size:1.1rem; color:var(--lime-neon); margin-bottom:1rem;">🎙️ Conduzione & Backstage Host</h3>
-    <div class="grid-2">
-      <div class="card-panel" style="display:flex; align-items:center; gap:1.2rem; padding:1.4rem; border-color: rgba(170,255,0,0.4);">
-        <img src="https://unsplash.com" alt="Flavia Fedorca" style="width:86px; height:86px; border-radius:50%; object-fit:cover; border:2px solid var(--lime-neon); flex-shrink:0;">
-        <div>
-          <span style="background:var(--lime-neon); color:var(--bg-dark); font-size:0.68rem; font-weight:700; padding:0.15rem 0.6rem; border-radius:999px;">MAIN STAGE HOST</span>
-          <h4 style="font-size:1.15rem; margin:0.35rem 0 0.2rem 0;">Flavia Fedorca</h4>
-          <p style="font-size:0.84rem; color:var(--text-light);">Conduttrice ufficiale sul palco principale di Piazza S. Giovanni in Laterano, guida le esibizioni e le votazioni.</p>
-        </div>
+    <!-- I 4 GIUDICI (3 AFFIANCATI + IL 4° CENTRATO SOTTO) -->
+    <h3 style="font-size:1.35rem; color:var(--purple-neon); margin-bottom:1.2rem;">★ Giuria Tecnica & Artistica</h3>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+      <!-- GIUDICE 1 -->
+      <div class="card-panel" style="flex: 1 1 320px; max-width: 390px; display:flex; flex-direction:column; align-items:center; text-align:center; padding: 2.2rem 1.6rem; border: 1px solid var(--purple-neon);">
+        <img src="foto/Giovanni.jpg" alt="Giovanni Caputo" style="width:140px; height:140px; border-radius:50%; object-fit:cover; border:3px solid var(--purple-neon); box-shadow: 0 0 20px rgba(125,81,254,0.35); margin-bottom: 1rem;">
+        <span style="background:var(--purple-neon); color:#fff; font-size:0.75rem; font-weight:700; padding:0.22rem 0.75rem; border-radius:999px;">GIUDICE #1 • PRODUTTORE & SOUND DESIGNER</span>
+        <h4 style="font-size:1.45rem; margin:0.55rem 0 0.35rem 0;">Giovanni Caputo</h4>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Produttore discografico e arrangiatore, valuta qualità sonora, originalità e costruzione del brano.</p>
       </div>
 
-      <div class="card-panel" style="display:flex; align-items:center; gap:1.2rem; padding:1.4rem; border-color: rgba(170,255,0,0.4);">
-        <img src="https://unsplash.com" alt="Artemisia Dahmani" style="width:86px; height:86px; border-radius:50%; object-fit:cover; border:2px solid var(--lime-neon); flex-shrink:0;">
-        <div>
-          <span style="background:var(--lime-neon); color:var(--bg-dark); font-size:0.68rem; font-weight:700; padding:0.15rem 0.6rem; border-radius:999px;">BACKSTAGE & SOCIAL HOST</span>
-          <h4 style="font-size:1.15rem; margin:0.35rem 0 0.2rem 0;">Artemisia Dahmani</h4>
-          <p style="font-size:0.84rem; color:var(--text-light);">Inviata nel backstage con gli artisti e host delle Fan Challenge su TikTok, Telegram e WhatsApp.</p>
-        </div>
+      <!-- GIUDICE 2 -->
+      <div class="card-panel" style="flex: 1 1 320px; max-width: 390px; display:flex; flex-direction:column; align-items:center; text-align:center; padding: 2.2rem 1.6rem; border: 1px solid var(--purple-neon);">
+        <img src="foto/Renato.jpg" alt="Renato de luca" style="width:140px; height:140px; border-radius:50%; object-fit:cover; border:3px solid var(--purple-neon); box-shadow: 0 0 20px rgba(125,81,254,0.35); margin-bottom: 1rem;">
+        <span style="background:var(--purple-neon); color:#fff; font-size:0.75rem; font-weight:700; padding:0.22rem 0.75rem; border-radius:999px;">GIUDICE #2 • CANTAUTORE & VOCAL COACH</span>
+        <h4 style="font-size:1.45rem; margin:0.55rem 0 0.35rem 0;">Renato de luca</h4>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Musicista e vocal coach con anni di esperienza live, giudica tecnica vocale ed espressività.</p>
+      </div>
+
+      <!-- GIUDICE 3 -->
+      <div class="card-panel" style="flex: 1 1 320px; max-width: 390px; display:flex; flex-direction:column; align-items:center; text-align:center; padding: 2.2rem 1.6rem; border: 1px solid var(--purple-neon);">
+        <img src="foto/Walter.jpg" alt="Walter Rambaldi" style="width:140px; height:140px; border-radius:50%; object-fit:cover; border:3px solid var(--purple-neon); box-shadow: 0 0 20px rgba(125,81,254,0.35); margin-bottom: 1rem;">
+        <span style="background:var(--purple-neon); color:#fff; font-size:0.75rem; font-weight:700; padding:0.22rem 0.75rem; border-radius:999px;">GIUDICE #3 • A&R & TALENT SCOUT</span>
+        <h4 style="font-size:1.45rem; margin:0.55rem 0 0.35rem 0;">Walter Rambaldi</h4>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Direttore artistico e talent scout, analizza impatto radiofonico e potenziale discografico.</p>
+      </div>
+
+      <!-- GIUDICE 4 (CENTRATO SOTTO I PRIMI 3) -->
+      <div class="card-panel" style="flex: 1 1 320px; max-width: 390px; display:flex; flex-direction:column; align-items:center; text-align:center; padding: 2.2rem 1.6rem; border: 1px solid var(--purple-neon);">
+        <img src="foto/Gabriele.jpg" alt="Gabriele Vitalba" style="width:140px; height:140px; border-radius:50%; object-fit:cover; border:3px solid var(--purple-neon); box-shadow: 0 0 20px rgba(125,81,254,0.35); margin-bottom: 1rem;">
+        <span style="background:var(--purple-neon); color:#fff; font-size:0.75rem; font-weight:700; padding:0.22rem 0.75rem; border-radius:999px;">GIUDICE #4 • LIVE DIRECTOR & CRITICO</span>
+        <h4 style="font-size:1.45rem; margin:0.55rem 0 0.35rem 0;">Gabriele Vitalba</h4>
+        <p style="font-size:0.92rem; color:var(--text-muted);">Critico musicale e direttore di palco, valuta presenza scenica e connessione con il pubblico.</p>
       </div>
     </div>
   </section>
+
   <section class="split-grid">
     <div>
       <div class="sec-title">
@@ -163,28 +178,28 @@
       </div>
     </div>
 
-    <div>
+        <div>
       <div class="sec-title">
         <h2>GENERI MUSICALI</h2>
       </div>
       <div class="genres-grid">
         <a href="candidati.html?q=Pop" class="genre-card">
-          <img src="https://unsplash.com" alt="Pop">
+          <img src="foto/genere-pop.jpg" alt="Pop & Synth">
           <span class="genre-label">POP & SYNTH</span>
           <div class="vinyl-disc"></div>
         </a>
         <a href="candidati.html?q=Rock" class="genre-card">
-          <img src="https://unsplash.com" alt="Rock">
+          <img src="foto/genere-rock.jpg" alt="Indie & Punk">
           <span class="genre-label">INDIE & PUNK</span>
           <div class="vinyl-disc"></div>
         </a>
         <a href="candidati.html?q=Urban" class="genre-card">
-          <img src="https://unsplash.com" alt="Urban">
+          <img src="foto/genere-urban.jpg" alt="Urban / Trap">
           <span class="genre-label">URBAN / TRAP</span>
           <div class="vinyl-disc"></div>
         </a>
         <a href="candidati.html?q=Soul" class="genre-card">
-          <img src="https://unsplash.com" alt="Soul">
+          <img src="foto/genere-soul.jpg" alt="Nu-Soul & Folk">
           <span class="genre-label">NU-SOUL & FOLK</span>
           <div class="vinyl-disc"></div>
         </a>
