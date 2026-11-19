@@ -1,27 +1,27 @@
 const DEFAULT_CANDIDATES = [
-  { id: 1, nome: "Nico Arezzo", brano: "Volo", genere: "Cantautorato Pop", bio: "Cantautore siciliano con uno stile intimo, chitarra acustica e testi diretti.", votes: 142, img: "foto/NicoArezzo.jpg", spec: "1080p • 184MB", link: "https://youtube.com" },
-  { id: 2, nome: "Sarah Toscano", brano: "Tacchi (fra le dita)", genere: "Dance Pop", bio: "Giovane voce pop italiana dal sound moderno, ritmato e perfetto per il palco.", votes: 158, img: "foto/SarahToscano.jpg", spec: "4K • 390MB", link: "https://youtube.com" },
-  { id: 3, nome: "Sethu", brano: "Cause perse", genere: "Alt Urban", bio: "Artista ligure che mescola sonorità urban, chitarre distorte ed energia punk.", votes: 131, img: "foto/Sethu.jpg", spec: "1080p • 120MB", link: "https://youtube.com" },
-  { id: 4, nome: "ISIDE", brano: "Paradiso", genere: "Elettropop", bio: "Progetto bergamasco caratterizzato da sintetizzatori sognanti e beat elettronici.", votes: 119, img: "foto/Iside.jpg", spec: "1080p • 215MB", link: "https://youtube.com" },
-  { id: 5, nome: "Tony Boy", brano: "Leanin'", genere: "Melodic Urban", bio: "Rapper padovano tra i nomi più seguiti della nuova onda urban introspettiva.", votes: 165, img: "foto/TonyBoy.jpg", spec: "1080p • 260MB", link: "https://youtube.com" },
-  { id: 6, nome: "Birthh", brano: "Supermarket", genere: "Alt Pop", bio: "Cantautrice e producer toscana dal respiro internazionale con beat ricercati.", votes: 111, img: "foto/Birthh.jpg", spec: "1080p • 150MB", link: "https://youtube.com" },
-  { id: 7, nome: "bnkr44", brano: "Governo Punk", genere: "Alt Pop / Punk", bio: "Collettivo toscano esplosivo che unisce pop punk, elettronica e club culture.", votes: 150, img: "foto/bnkr44.jpg", spec: "4K • 440MB", link: "https://youtube.com" },
-  { id: 8, nome: "GINEVRA", brano: "Club Metro", genere: "Nu-Soul / Electro", bio: "Cantautrice e producer torinese dalle atmosfere notturne, R&B ed elettroniche.", votes: 128, img: "foto/Ginevra.jpg", spec: "1080p • 175MB", link: "https://youtube.com" },
-  { id: 9, nome: "Chiara Cami", brano: "Alibi", genere: "Indie Pop", bio: "Giovane cantautrice selezionata tra le nuove promesse della scena indie.", votes: 98, img: "foto/ChiaraCami.jpg", spec: "1080p • 290MB", link: "https://youtube.com" },
-  { id: 10, nome: "Delia", brano: "Sicilia Bedda", genere: "Folk / World Pop", bio: "Artista siciliana che fonde tradizione vocale mediterranea e suoni moderni.", votes: 137, img: "foto/Delia.jpg", spec: "1080p • 140MB", link: "https://youtube.com" }
+  { id: 1, nome: "Nico Arezzo", brano: "Volo", genere: "Cantautorato Pop", bio: "Cantautore siciliano con uno stile intimo, chitarra acustica e testi diretti.", votes: 142, img: "foto/NicoArezzo.jpg", spec: "1080p • 184MB", link: "https://youtu.be/k2j8epBO6EA?is=mgD1HQ1y8yxrpQjQ" },
+  { id: 2, nome: "Sarah Toscano", brano: "Tacchi (fra le dita)", genere: "Dance Pop", bio: "Giovane voce pop italiana dal sound moderno, ritmato e perfetto per il palco.", votes: 158, img: "foto/SarahToscano.jpg", spec: "4K • 390MB", link: "https://youtu.be/QZTSvReFMdo?is=PG3cY03JDMmi0_kN" },
+  { id: 3, nome: "Sethu", brano: "Cause perse", genere: "Alt Urban", bio: "Artista ligure che mescola sonorità urban, chitarre distorte ed energia punk.", votes: 131, img: "foto/Sethu.jpg", spec: "1080p • 120MB", link: "https://youtu.be/ulJU59X4KB4?is=C-az1BUBbWj5ddy5" },
+  { id: 4, nome: "ISIDE", brano: "Paradiso", genere: "Elettropop", bio: "Progetto bergamasco caratterizzato da sintetizzatori sognanti e beat elettronici.", votes: 119, img: "foto/Iside.jpg", spec: "1080p • 215MB", link: "https://www.youtube.com/watch?v=K-sTVJXObbw&list=RDK-sTVJXObbw&start_radio=1" },
+  { id: 5, nome: "Tony Boy", brano: "Leanin'", genere: "Melodic Urban", bio: "Rapper padovano tra i nomi più seguiti della nuova onda urban introspettiva.", votes: 165, img: "foto/TonyBoy.jpg", spec: "1080p • 260MB", link: "https://youtu.be/wPcb7rrKkkA?is=KlybP5h9I-25C2sY" },
+  { id: 6, nome: "Birthh", brano: "Supermarket", genere: "Alt Pop", bio: "Cantautrice e producer toscana dal respiro internazionale con beat ricercati.", votes: 111, img: "foto/Birthh.jpg", spec: "1080p • 150MB", link: "https://www.youtube.com/watch?v=JDxsBoeJ5EM&list=RDJDxsBoeJ5EM&start_radio=1" },
+  { id: 7, nome: "bnkr44", brano: "Governo Punk", genere: "Alt Pop / Punk", bio: "Collettivo toscano esplosivo che unisce pop punk, elettronica e club culture.", votes: 150, img: "foto/bnkr44.jpg", spec: "4K • 440MB", link: "https://www.youtube.com/watch?v=0SlTuKd8qLA&list=RD0SlTuKd8qLA&start_radio=1" },
+  { id: 8, nome: "GINEVRA", brano: "Club Metro", genere: "Nu-Soul / Electro", bio: "Cantautrice e producer torinese dalle atmosfere notturne, R&B ed elettroniche.", votes: 128, img: "foto/Ginevra.jpg", spec: "1080p • 175MB", link: "https://youtu.be/wqoicvhnKpY?is=Tx48e0dliVn8IA4n" },
+  { id: 9, nome: "Chiara Cami", brano: "Alibi", genere: "Indie Pop", bio: "Giovane cantautrice selezionata tra le nuove promesse della scena indie.", votes: 98, img: "foto/ChiaraCami.jpg", spec: "1080p • 290MB", link: "https://youtu.be/EoOzZ2vFKZA?is=sPNvaslwQy-EJFw9" },
+  { id: 10, nome: "Delia", brano: "Sicilia Bedda", genere: "Folk / World Pop", bio: "Artista siciliana che fonde tradizione vocale mediterranea e suoni moderni.", votes: 137, img: "foto/Delia.jpg", spec: "1080p • 140MB", link: "https://www.youtube.com/watch?v=W-sHgSBy82o&list=RDW-sHgSBy82o&start_radio=1" }
 ];
 
 function getCandidates() {
-  const stored = localStorage.getItem('neonote_candidates_v5');
+  const stored = localStorage.getItem('neonote_candidates_v7');
   if (!stored) {
-    localStorage.setItem('neonote_candidates_v5', JSON.stringify(DEFAULT_CANDIDATES));
+    localStorage.setItem('neonote_candidates_v7', JSON.stringify(DEFAULT_CANDIDATES));
     return DEFAULT_CANDIDATES;
   }
   return JSON.parse(stored);
 }
 
 function getVotedList() {
-  return JSON.parse(localStorage.getItem('neonote_voted_v5')) || [];
+  return JSON.parse(localStorage.getItem('neonote_voted_v7')) || [];
 }
 
 function getCurrentUser() {
@@ -64,8 +64,8 @@ function voteForCandidate(id, callback) {
   }
   const list = getCandidates().map(c => c.id === id ? { ...c, votes: c.votes + 1 } : c);
   voted.push(id);
-  localStorage.setItem('neonote_candidates_v5', JSON.stringify(list));
-  localStorage.setItem('neonote_voted_v5', JSON.stringify(voted));
+  localStorage.setItem('neonote_candidates_v7', JSON.stringify(list));
+  localStorage.setItem('neonote_voted_v7', JSON.stringify(voted));
   if (callback) callback();
 }
 
