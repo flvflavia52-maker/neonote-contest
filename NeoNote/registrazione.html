@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Registrazione | neoNote</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo"><span class="logo-mark">M</span> neoNote®</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="candidati.html">Candidati</a>
+      <a href="votazioni.html">Votazioni</a>
+      <a href="regolamento.html">Regolamento & Video</a>
+      <a href="legale.html">Info & Contatti</a>
+    </nav>
+    <div class="nav-auth" id="navAuthArea"></div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="card-panel" style="max-width:620px; margin:0 auto;">
+    <div style="display:flex; gap:0.5rem; background:var(--bg-dark); padding:0.4rem; border-radius:999px; margin-bottom:1.8rem;">
+      <button id="btn-login" class="btn btn-purple" style="flex:1;" onclick="setMode('login')">Login / Logout</button>
+      <button id="btn-utente" class="btn btn-outline" style="flex:1; border:none;" onclick="setMode('utente')">Reg. Utente</button>
+      <button id="btn-artista" class="btn btn-outline" style="flex:1; border:none;" onclick="setMode('artista')">Reg. Artista</button>
+    </div>
+
+    <!-- LOGIN / LOGOUT -->
+    <form id="panel-login" onsubmit="doLogin(event)">
+      <h2>Login / Gestione Sessione</h2>
+      <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:1.2rem;">Accedi per sbloccare il pulsante di voto sui 10+ candidati.</p>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="loginEmail" required placeholder="utente@neonote.it">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" required placeholder="••••••••">
+      </div>
+      <button type="submit" class="btn btn-lime" style="width:100%;">Accedi</button>
+    </form>
+
+    <!-- REGISTRAZIONE UTENTE -->
+    <form id="panel-utente" style="display:none;" onsubmit="doRegisterUser(event)">
+      <h2>Registrazione Utente Votante</h2>
+      <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:1.2rem;">Crea il tuo profilo gratuito per sostenere gli artisti in gara.</p>
+      <div class="form-group">
+        <label>Nome e Cognome</label>
+        <input type="text" id="regUserName" required placeholder="Es. Luca Bianchi">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" required placeholder="luca@esempio.it">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" required placeholder="Minimo 8 caratteri">
+      </div>
+      <div class="form-group" style="display:flex; gap:0.5rem; align-items:center;">
+        <input type="checkbox" required style="width:auto;">
+        <label style="margin:0; font-size:0.8rem;">Accetto le <a href="legale.html" style="color:var(--lime-neon);">Informative Burocratiche</a>.</label>
+      </div>
+      <button type="submit" class="btn btn-purple" style="width:100%;">Crea Account Utente</button>
+    </form>
+
+    <!-- REGISTRAZIONE ARTISTA CANDIDATO -->
+    <form id="panel-artista" style="display:none;" onsubmit="doRegisterArtist(event)">
+      <h2>Registrazione Artista Candidato</h2>
+      <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:1.2rem;">Compila la scheda artista e carica il video (.MP4 / .MOV, max 500 MB).</p>
+      <div class="form-group">
+        <label>Nome d'Arte o Band</label>
+        <input type="text" id="artName" required placeholder="Es. Nova Sound">
+      </div>
+      <div class="form-group">
+        <label>Titolo Brano</label>
+        <input type="text" id="artTrack" required placeholder="Es. Luci nella Notte">
+      </div>
+      <div class="form-group">
+        <label>Genere Musicale</label>
+        <input type="text" id="artGenre" required placeholder="Es. Synth Pop / Indie">
+      </div>
+      <div class="form-group">
+        <label>Piccola Bio (max 100 caratteri)</label>
+        <input type="text" id="artBio" maxlength="100" required placeholder="Breve descrizione che apparirà sotto la foto...">
+      </div>
+      <div class="form-group">
+        <label>Video Esibizione (MP4 / MOV — Max 500 MB — Min 1080p)</label>
+        <input type="file" id="artVideo" accept="video/mp4,video/quicktime" required>
+      </div>
+      <div class="form-group" style="display:flex; gap:0.5rem; align-items:center;">
+        <input type="checkbox" required style="width:auto;">
+        <label style="margin:0; font-size:0.8rem;">Accetto il <a href="regolamento.html" style="color:var(--lime-neon);">Regolamento e Specifiche Video</a>.</label>
+      </div>
+      <button type="submit" class="btn btn-lime" style="width:100%;">Invia Candidatura</button>
+    </form>
+  </div>
+</main>
+
+<script src="data.js"></script>
+<script>
+  function setMode(mode) {
+    ['login', 'utente', 'artista'].forEach(m => {
+      document.getElementById('panel-' + m).style.display = (m === mode) ? 'block' : 'none';
+      const btn = document.getElementById('btn-' + m);
+      btn.className = (m === mode) ? 'btn btn-purple' : 'btn btn-outline';
+      if (m !== mode) btn.style.border = 'none';
+    });
+  }
+
+  const tabParam = new URLSearchParams(window.location.search).get('tab');
+  if (tabParam) setMode(tabParam);
+
+  function doLogin(e) {
+    e.preventDefault();
+    const nome = document.getElementById('loginEmail').value.split('@');
+    localStorage.setItem('neonote_user_v2', JSON.stringify({ nome, role: 'Utente' }));
+    window.location.href = 'votazioni.html';
+  }
+
+  function doRegisterUser(e) {
+    e.preventDefault();
+    const nome = document.getElementById('regUserName').value;
+    localStorage.setItem('neonote_user_v2', JSON.stringify({ nome, role: 'Utente' }));
+    window.location.href = 'votazioni.html';
+  }
+
+  function doRegisterArtist(e) {
+    e.preventDefault();
+    const file = document.getElementById('artVideo').files;
+    if (file && file.size > 500 * 1024 * 1024) {
+      alert('Il file video supera il limite consentito di 500 MB.');
+      return;
+    }
+    const list = getCandidates();
+    const nome = document.getElementById('artName').value;
+    list.unshift({
+      id: Date.now(),
+      nome: nome,
+      brano: document.getElementById('artTrack').value,
+      genere: document.getElementById('artGenre').value,
+      bio: document.getElementById('artBio').value,
+      votes: 1,
+      img: "https://unsplash.com",
+      spec: "1080p • Verificato"
+    });
+    localStorage.setItem('neonote_candidates_v2', JSON.stringify(list));
+    localStorage.setItem('neonote_user_v2', JSON.stringify({ nome, role: 'Artista' }));
+    alert('Candidatura pubblicata con successo!');
+    window.location.href = 'votazioni.html';
+  }
+</script>
+</body>
+</html>
